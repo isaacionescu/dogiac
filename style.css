@@ -1,0 +1,141 @@
+* {
+	box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+
+	font-family: monospace;
+	font-size: 1.15em;
+	font-weight: bold;
+	color: yellow;
+    
+}
+
+/* Media queries below*/
+@media (min-width: 675px) and (max-width: 3000px) {
+	.col-lg-4 {
+		width: 33.33%;
+		float: left;
+	}
+}
+
+@media (min-width: 525px) and (max-width: 674px) {
+	.col-md-6 {
+		width: 50%;
+		float: left;
+	}
+}
+
+@media (max-width: 524){
+	.col-sm-12 {
+		width: 100%;
+		float: left;
+	}
+}
+/* End of media queries*/
+
+body {
+	background-image: url("./utils/uni1.jpg");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-width: 100%
+/*	background-size: cover;*/
+
+}
+
+.header p {
+/*	background-color: white;*/
+/*	border: 2px solid black;*/
+	margin-top: 30px;
+	padding: 0;
+	text-align: center;
+	font-size: 4rem;
+	color: pink;
+	text-decoration: overline underline;
+	text-shadow: 20px hsl(255 255 255);
+}
+
+.container {
+/*	background-color: green;*/
+	
+	visibility: visible;
+	margin-top: 50px;
+	margin-left: 20px;
+	margin-right: 20px;
+	transition-duration: 1s;
+}
+
+.row {
+/*	background-color: yellow;*/
+
+	width: 100%;
+	margin-top: 30px;
+	color:red;
+}
+
+.button {
+/*	display:flex;*/
+	visibility: visible;
+	opacity: 65%;
+	margin-top: 1rem;
+	padding: 0.2rem;
+	background-color: white;
+	color: black;
+	border: 4px solid black;
+	border-radius: 15px;
+	border-collapse: collapse;
+	text-align: center;
+	font-weight: bolder;
+	font-style: oblique;
+	transition-duration: 0.7s;
+}
+
+.button:hover {
+	cursor: pointer; 
+}
+
+.white-text {
+	color: white;
+}
+
+
+.makeitred {
+	background-color: pink;
+	color: red;
+	font-color: red;
+}
+
+.makeinvisible {
+	transform: skew(90deg, 45deg) rotateY(180deg);	
+	visibility: hidden;
+	opacity: 0%;
+
+	transition-duration: 1s;
+
+}
+
+.highlight {
+  opacity: 100%;
+  transform: scale(1.03);
+  transition-duration: 0.2s;
+}
+
+.result {
+	visibility: visible;
+	opacity: 100%;
+	margin-top: 1rem;
+	padding: 0.2rem;
+	background-color: white;
+	color: black;
+	text-align: center;
+	font-weight: bolder;
+	font-style: oblique;
+	transition-duration: 0.7s;
+}
+
+
+/*.TESTE-DE-ANIMATZII {
+	transform: scale(1.1);
+  transition-duration: 0.218s;
+  transition-property: background, border, opacity, box-shadow, transform;
+  transition-timing-function: ease-in;
+}*/
