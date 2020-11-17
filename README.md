@@ -7,7 +7,9 @@ The concept is simple: you have 12 buttons, each representing a zodiac sign. You
 The landing page has top part (.header), followed by some introductory text (.container) and a section (.table) with the 12 zodiac buttons. Each zodiac button is a "div" that also has a "data-id" property ranging from 1 to 12.
 The connections for each zodiac sign are not assigned manually, but with the help of logic and modules.
 I have two separate modules:
+
 • script.js = main file;
+
 • zodiac.js = my dog "database"
 
 The zodiac.js database is where I created two objects: the first object is holding the main dog information within 12 entries, one for each dog. Each entry has an ID (1), a zodiac sign (Aries), a corresponding dog breed (Husky) and the dates for that particular sign (March 21 - April 19).
