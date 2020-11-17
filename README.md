@@ -2,7 +2,7 @@
 
 This is a simple project, and my first finished page as part of my self-training in front-end development.
 
-The concept is simple: you have 12 buttons, each representing a zodiac sign. You choose one and, in return, you get a nice little text describing what "doggo" you would be according to your star sign. Kind of like a Buzzfeed quiz.
+The concept is easy: you have 12 buttons, each representing a zodiac sign. You choose one and, in return, you get a nice little text describing what "doggo" you would be according to your star sign. Kind of like a Buzzfeed quiz.
 
 The landing page has top part (.header), followed by some introductory text (.container) and a section (.table) with the 12 zodiac buttons. Each zodiac button is a "div" that also has a "data-id" property ranging from 1 to 12.
 The connections for each zodiac sign are not assigned manually, but with the help of logic and modules.
