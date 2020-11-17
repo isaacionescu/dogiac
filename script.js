@@ -7,9 +7,10 @@ class App {
 		this.zodiac = zodiac;
 		this.texte = texte;
 
-		this.$body = document.querySelectorAll('body');
+		this.$body = document.querySelector('body');
 		this.$button = document.querySelector('.button');
 		this.$container = document.querySelector('.container');
+		this.$table =document.querySelector('.table');
 
 		this.addEventListeners();
 	}
@@ -55,18 +56,36 @@ class App {
 		if(event.target.matches('.button')) {
 			const whichButton = event.target.closest('.button');
 			this.$container.classList.add('makeinvisible');
+			this.$table.classList.add('makeinvisible');
+			// this.$container.classList.add('display-none');
+			// this.$table.classList.add('display-none');
 			return whichButton
 		} 
 	}
 
 	populatePage(id) {
-		setTimeout(() => { this.$container.outerHTML = 
-			`
-			You are a ${this.zodiac[id].breed}! Woof woof 🐶
+		setTimeout( () => { 
+			const result = document.createElement('div');
+			result.classList.add('container');
 
-			As a ${this.zodiac[id].sign} born in the interval of ${this.zodiac[id].dates}
+			result.innerHTML = 
 			`
-		 }, 900);
+			You are a ${this.zodiac[id].breed}! Woof woof 🐶 <br><br>
+			You are a ${this.zodiac[id].sign} born in the interval of ${this.zodiac[id].dates}.
+			<br><br>
+			${this.texte[id]}
+			`
+
+			this.$container.innerHTML = "";
+			this.$container.appendChild(result);
+
+			this.$container.classList.remove('makeinvisible');
+
+
+			// this.$container.textContent = result;
+
+			console.log(result)
+		 }, 400);
 
 	// console.log(`Raspuns: ${this.zodiac[signID].breed}`)
 	}
