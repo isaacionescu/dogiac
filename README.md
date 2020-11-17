@@ -16,7 +16,7 @@ The zodiac.js database is where I created two objects: the first object is holdi
 The second object is holding the larger text paragraphs where the doggo's qualities are described. This object also has 12 entries, each one identifiable by ID number.
 
 The script.js file holds the main engine for my code. Here, the zodiac.js is first imported, so I can use that dog information locally.
-Then, the rest of the file is just a class called App(). Inside this class, I associated several external variables and document selectors to corresponding local "this" objects.
+Then, the rest of the file is just a class called App() and invoked at the very end. Inside this class, I associated several external variables and document selectors to corresponding local "this" objects.
 Then, I am invoking event listeners for mouse click and mouse movements. For each of them I have some associated behavior:
 
 Mouse movements ("mouseover" and "mouseout") determine how the buttons react: they change size and opacity smoothly, with a little transition.
