@@ -14,13 +14,13 @@ export let zodiac = {
 }
 
 
-export let texte = {
+export let texts = {
 	1: `
-		Huskys are playful, free spirited, independent, need a lot of exercise, just like a typical Aries! They howl like crazy.
+		Huskies are playful, free spirited, independent, need a lot of exercise, just like a typical Aries! They howl like crazy.
 	`,
 
 	2: `
-	With amazing friends, colleagues, and partners, Taureans are ambitious, trustworthy, value honesty above all else and are proud that their personal relationships tend to be drama free.
+	With amazing friends and partners, Taureans are ambitious, trustworthy, value honesty above all else their personal relationships are drama-free.
 	Beagles are active companions for kids and adults alike. But they can also be stubborn and require patience.
 	`,
 

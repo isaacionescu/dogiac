@@ -1,16 +1,16 @@
-import { zodiac, texte } from './zodiac.js';
+import { zodiac, texts } from './zodiac.js';
 // console.log(zodiac[1].sign)
-// console.log(texte[1])
+// console.log(texts[1])
 
 class App {
 	constructor() {
 		this.zodiac = zodiac;
-		this.texte = texte;
-
+		this.texts = texts;
 		this.$body = document.querySelector('body');
 		this.$button = document.querySelector('.button');
-		this.$container = document.querySelector('.container');
+		this.$intro = document.querySelector('.intro');
 		this.$table =document.querySelector('.table');
+		this.$result = document.querySelector('.result')
 
 		this.addEventListeners();
 	}
@@ -48,48 +48,38 @@ class App {
 	}
 
 	generateResult() {
-		const signID = this.hideContainer().dataset.id;
+		const signID = this.hideIntro().dataset.id;
 		this.populatePage(signID)
 	}
 
-	hideContainer() {
+	hideIntro() {
 		if(event.target.matches('.button')) {
 			const whichButton = event.target.closest('.button');
-			this.$container.classList.add('makeinvisible');
-			this.$table.classList.add('makeinvisible');
-			// this.$container.classList.add('display-none');
-			// this.$table.classList.add('display-none');
+			this.$intro.classList.add('make-invisible');
+			this.$table.classList.add('make-invisible');
 			return whichButton
 		} 
 	}
 
 	populatePage(id) {
 		setTimeout( () => { 
-			const result = document.createElement('div');
-			result.classList.add('container');
+			const result1 = document.createElement('div');
+			const result2 = document.createElement('div');
+			result1.classList.add('result-tagline');
+			result2.classList.add('result-paragraph');
 
-			result.innerHTML = 
-			`
-			You are a ${this.zodiac[id].breed}! Woof woof 🐶 <br><br>
+			result1.innerHTML = `You are a ${this.zodiac[id].breed}!<br> Woof woof 🐶 <br><br>
 			You are a ${this.zodiac[id].sign} born in the interval of ${this.zodiac[id].dates}.
-			<br><br>
-			${this.texte[id]}
-			`
+			<br><br>`
 
-			this.$container.innerHTML = "";
-			this.$container.appendChild(result);
+			result2.innerHTML = `${this.texts[id]}`
 
-			this.$container.classList.remove('makeinvisible');
-
-
-			// this.$container.textContent = result;
-
-			console.log(result)
+			this.$intro.innerHTML = "";
+			this.$table.innerHTML = "";
+			this.$result.appendChild(result1);
+			this.$result.appendChild(result2);
 		 }, 400);
-
-	// console.log(`Raspuns: ${this.zodiac[signID].breed}`)
 	}
-
 }
 
 new App();
