@@ -1,16 +1,16 @@
-export let zodiac = {
+export let dogs = {
 	 1: { sign: 'Aries', breed: 'Husky', dates: 'March 21 - April 19' },
 	 2: { sign: 'Taurus', breed: 'Beagle', dates: 'April 20 - May 20' },
 	 3: { sign: 'Gemini', breed: 'German Shepherd', dates: 'May 21-Jun 20' },
-	 4: { sign: 'Cancer', breed: 'Dalmatian?', dates: 'Jun 21 - Jul 22' },
-	 5: { sign: 'Leo', breed: 'Leo breed', dates: 'Jul 23 - Aug 22' },
-	 6: { sign: 'Virgo', breed: 'Virgo breed', dates: 'Aug 23 - Sep 22' },
-	 7: { sign: 'Libra', breed: 'Libra breed', dates: 'Sep 23 - Oct 22' },
-	 8: { sign: 'Scorpio', breed: 'Scorpio breed', dates: 'Oct 23 - Nov 21' },
-	 9: { sign: 'Sagittarius', breed: 'Sagittarius breed', dates: 'Nov 22 - Dec 21' },
-	10: { sign: 'Capricorn', breed: 'Capricorn breed', dates: 'Dec 22 - Jan 19' },
-	11: { sign: 'Aquarius', breed: 'Aquarius breed', dates: 'Jan 20 - Feb 18' },
-	12: { sign: 'Pisces', breed: 'Pisces breed', dates: 'Feb 19 - March 20' },
+	 4: { sign: 'Cancer', breed: 'Dalmatian', dates: 'Jun 21 - Jul 22' },
+	 5: { sign: 'Leo', breed: '*Leo breed*', dates: 'Jul 23 - Aug 22' },
+	 6: { sign: 'Virgo', breed: '*Virgo breed*', dates: 'Aug 23 - Sep 22' },
+	 7: { sign: 'Libra', breed: '*Libra breed*', dates: 'Sep 23 - Oct 22' },
+	 8: { sign: 'Scorpio', breed: '*Scorpio breed*', dates: 'Oct 23 - Nov 21' },
+	 9: { sign: 'Sagittarius', breed: '*Sagittarius breed*', dates: 'Nov 22 - Dec 21' },
+	10: { sign: 'Capricorn', breed: '*Capricorn breed*', dates: 'Dec 22 - Jan 19' },
+	11: { sign: 'Aquarius', breed: '*Aquarius breed*', dates: 'Jan 20 - Feb 18' },
+	12: { sign: 'Pisces', breed: '*Pisces breed*', dates: 'Feb 19 - March 20' },
 }
 
 
@@ -64,16 +64,3 @@ export let texts = {
 	Sorry, I only have some filler text for Pisces at the moment. When I'll find inspiration to connect it to a dog, I'll write a short paragraph here. In the meantime, go back to the home page and try another of the first few dogs! :)
 	`
 }
-
-
-
-// export class Dogiac {	
-// 	constructor(id) {
-// 		this.id = id;
-// 	}
-// 	getDog(nr) {
-// 		return `Still works: you requested ${zodiac[nr]}`
-// 	}
-// }
-// new Dogiac()
-// console.log(dogz.getDog(2).breed);

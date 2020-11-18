@@ -1,15 +1,13 @@
-import { zodiac, texts } from './zodiac.js';
-// console.log(zodiac[1].sign)
-// console.log(texts[1])
+import { dogs, texts } from './zodiac.js';
 
 class App {
 	constructor() {
-		this.zodiac = zodiac;
+		this.dogs = dogs;
 		this.texts = texts;
 		this.$body = document.querySelector('body');
 		this.$button = document.querySelector('.button');
 		this.$intro = document.querySelector('.intro');
-		this.$table =document.querySelector('.table');
+		this.$grid =document.querySelector('.grid');
 		this.$result = document.querySelector('.result')
 
 		this.addEventListeners();
@@ -44,23 +42,31 @@ class App {
 			button.classList.remove('highlight')
 			// position.classList.toggle('button')
 		}
-
 	}
 
+	// Retrieves the HTML element that was clicked from hidePageContent(), and finds its corresponding ID.
+	// Then, it passes this ID further to populatePage()
 	generateResult() {
-		const signID = this.hideIntro().dataset.id;
+		const signID = this.hidePageContent().dataset.id;
 		this.populatePage(signID)
 	}
 
-	hideIntro() {
+	// Finds out which is the button element that was clicked, then returns it, at the end.
+	// Visually fades away the intro and grid sections of the page via animation.
+	hidePageContent() {
 		if(event.target.matches('.button')) {
 			const whichButton = event.target.closest('.button');
-			this.$intro.classList.add('make-invisible');
-			this.$table.classList.add('make-invisible');
+			this.$intro.classList.add('invisible');
+			this.$grid.classList.add('invisible');
 			return whichButton
 		} 
 	}
 
+	// Creates two new variables to hold the quiz results: tagline and paragraph.
+	// Assigns the appropriate classes to each. Assigns template text to each.
+	// Passes nouns such as the breed or zodiac sign to addArticle().
+	// Removes the intro and grid sections from the DOM. Cancels the display:none on the result.
+	// And. finally, it populates the DOM with the quiz result.
 	populatePage(id) {
 		setTimeout( () => { 
 			const result1 = document.createElement('div');
@@ -68,17 +74,32 @@ class App {
 			result1.classList.add('result-tagline');
 			result2.classList.add('result-paragraph');
 
-			result1.innerHTML = `You are a ${this.zodiac[id].breed}!<br> Woof woof 🐶 <br><br>
-			You are a ${this.zodiac[id].sign} born in the interval of ${this.zodiac[id].dates}.
-			<br><br>`
+			const breed = this.dogs[id].breed;
+			const sign = this.dogs[id].sign;
 
+			result1.innerHTML = `You are ${this.addArticle(breed)}!<br> Woof woof 🐶 <br><br>
+			Why? Because you're ${this.addArticle(sign)}!<br>(${this.dogs[id].dates})<br><br>`
 			result2.innerHTML = `${this.texts[id]}`
 
-			this.$intro.innerHTML = "";
-			this.$table.innerHTML = "";
+			this.$intro.parentNode.removeChild(this.$intro)
+			this.$grid.parentNode.removeChild(this.$grid)
+
+			this.$result.classList.add('visible');
+
 			this.$result.appendChild(result1);
 			this.$result.appendChild(result2);
-		 }, 400);
+		 }, 200)
+	}
+
+	// This function simply prepends the appropriate indefinite article to the noun:
+	// Either "a" or "an".
+	addArticle(word) {
+		const vowels = ['a', 'e', 'i', 'o', 'u'];
+		const firstLetter = word.substr(0, 1).toLowerCase();
+		const startsWithVowel = vowels.includes(firstLetter, 0);
+		let a = "a";
+		startsWithVowel ? a+= "n" : a = a;
+		return `${a} ${word}`
 	}
 }
 
