@@ -40,8 +40,13 @@ body {
 }
 
 .logo {
+	opacity: 85%;
 	font-size: 3.5rem; color: white;
 	text-decoration: overline underline;
+}
+
+.logo:active {
+	opacity: 100%;
 }
 
 .intro-text {
