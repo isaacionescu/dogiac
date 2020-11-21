@@ -24,30 +24,38 @@ body {
 	align-items: center;
 }
 
-.no-highlight {
-	-webkit-tap-highlight-color: rgba(0,0,0,0);
-	-webkit-tap-highlight-color: transparent;
-}
-
 .header {
 	/*background-color: red;*/
 	margin-top: 2rem;
 	margin-bottom: 0.5rem;
 	width: 100%;
-	display: flex;
+	display: block;
 	justify-content: center;
 	align-items: center;
+	text-decoration: overline underline;
+
 }
 
 .logo {
-	opacity: 85%;
-	font-size: 3.5rem; color: white;
+	/*line-height: 1.4;*/
+	background: rgba(250, 250, 250, 0.002);
+	border-radius: 1.5rem;
+	padding: 1rem;
+	opacity: 80%;
+	font-size: 3.5rem;
+	color: white;
+	text-decoration: overline underline;
+}
+
+.logo:link {
 	text-decoration: overline underline;
 }
 
 .logo:active {
 	opacity: 100%;
+	text-decoration: overline underline;
 }
+
 
 .intro-text {
 	/*background-color: blue;*/
@@ -226,5 +234,9 @@ body {
 		margin-bottom: 1rem;
 	}
 }
-
 /* End of media queries*/
+
+.no-highlight {
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+	-webkit-tap-highlight-color: transparent;
+}
