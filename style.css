@@ -54,8 +54,7 @@ body {
 
 .grid {
 	/*background-color: green;*/
-	margin-top: 1rem;
-	margin-bottom: 1rem;
+	margin: 1 auto 0;
 	width: 47%;
 
 	display: grid;
@@ -101,7 +100,7 @@ body {
 
 .result {
 	background-color: rgba(150, 150, 150, 0.5);
-	margin: 4rem auto;
+	margin: 0rem auto;
 	max-width: 90%;
 	padding: 0.5rem;
 	border-radius: 1.5rem;
@@ -121,14 +120,14 @@ body {
 }
 
 .invisible {
-	display: none;
+	/*display: none;*/
 	opacity: 0%;
 	visibility: hidden;
 	transition-duration: 0.5s;
 }
 
 .visible {
-	display: initial;
+	/*display: initial;*/
 	opacity: 100%;
 	visibility: visible;
 	transition-duration: 0.5s;
@@ -197,7 +196,7 @@ body {
 	.grid {
 		/*background-color: yellow;*/
 		margin: 1rem auto 0;
-		max-width: 90%;
+		max-width: 70%;
 		grid-template-columns: 1fr 1fr;
 		grid-gap: 0.6rem 0.4rem;
 		font-size: 1.4rem;
@@ -214,7 +213,7 @@ body {
 	.grid {
 		/*background-color: green;*/
 		margin-top: 1rem;
-		margin-bottom: 2rem;
+		margin-bottom: 1rem;
 	}
 }
 

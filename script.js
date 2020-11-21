@@ -45,15 +45,13 @@ class App {
 		}
 	}
 
-	// Retrieves the HTML element that was clicked, from hidePageContent(), and finds its corresponding ID.
-	// Then, it passes this ID further to populatePage()
+	// Retrieves the HTML element that was clicked, from hidePageContent(), and finds its corresponding ID. Then, it passes this ID further to populatePage()
 	generateResult() {
 		const signID = this.hidePageContent().dataset.id;
 		this.populatePage(signID)
 	}
 
-	// Finds out which is the button element that was clicked, then returns it, at the end.
-	// Visually fades away the intro and grid sections of the page via animation.
+	// Finds out which is the button element that was clicked, then returns it, at the end. Visually fades away the intro and grid sections of the page via animation.
 	hidePageContent() {
 		if(event.target.matches('.button')) {
 			const whichButton = event.target.closest('.button');
@@ -64,19 +62,19 @@ class App {
 	}
 
 	populatePage(id) {
+		this.$result.style.margin = "4rem auto";
 		setTimeout( () => { 
-			const breed = this.dogs[id].breed;
-			const sign = this.dogs[id].sign;
-
 			this.$introText.parentNode.removeChild(this.$introText)
 			this.$grid.parentNode.removeChild(this.$grid)
-			
 			this.$result.classList.add('visible');
+
+			const breed = this.dogs[id].breed;
+			const sign = this.dogs[id].sign;
 
 			this.$resultTagline.innerHTML = `You are ${this.addArticle(breed)}!<br> Woof woof 🐶 <br><br>
 			Why? Because you're ${this.addArticle(sign)}!<br>(${this.dogs[id].dates})<br><br>`
 			this.$resultParapgraph.innerHTML = `${this.texts[id]}`;
-		 }, 200)
+		 }, 400)
 	}
 
 	// This function prepends the correct indefinite article to the noun: "a" or "an".
