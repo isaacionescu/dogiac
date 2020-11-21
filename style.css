@@ -24,6 +24,11 @@ body {
 	align-items: center;
 }
 
+.no-highlight {
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+	-webkit-tap-highlight-color: transparent;
+}
+
 .header {
 	/*background-color: red;*/
 	margin-top: 2rem;
