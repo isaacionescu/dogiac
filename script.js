@@ -6,9 +6,11 @@ class App {
 		this.texts = texts;
 		this.$body = document.querySelector('body');
 		this.$button = document.querySelector('.button');
-		this.$intro = document.querySelector('.intro');
+		this.$introText = document.querySelector('.intro-text');
 		this.$grid =document.querySelector('.grid');
-		this.$result = document.querySelector('.result')
+		this.$result = document.querySelector('.result');
+		this.$resultTagline = document.querySelector('.result-tagline');
+		this.$resultParapgraph = document.querySelector('.result-paragraph');
 
 		this.addEventListeners();
 	}
@@ -40,11 +42,10 @@ class App {
 		const button = event.target.closest('.button');
 		if(event.target.matches('.button')) {
 			button.classList.remove('highlight')
-			// position.classList.toggle('button')
 		}
 	}
 
-	// Retrieves the HTML element that was clicked from hidePageContent(), and finds its corresponding ID.
+	// Retrieves the HTML element that was clicked, from hidePageContent(), and finds its corresponding ID.
 	// Then, it passes this ID further to populatePage()
 	generateResult() {
 		const signID = this.hidePageContent().dataset.id;
@@ -56,50 +57,36 @@ class App {
 	hidePageContent() {
 		if(event.target.matches('.button')) {
 			const whichButton = event.target.closest('.button');
-			this.$intro.classList.add('invisible');
+			this.$introText.classList.add('invisible');
 			this.$grid.classList.add('invisible');
 			return whichButton
 		} 
 	}
 
-	// Creates two new variables to hold the quiz results: tagline and paragraph.
-	// Assigns the appropriate classes to each. Assigns template text to each.
-	// Passes nouns such as the breed or zodiac sign to addArticle().
-	// Removes the intro and grid sections from the DOM. Cancels the display:none on the result.
-	// And. finally, it populates the DOM with the quiz result.
 	populatePage(id) {
 		setTimeout( () => { 
-			const result1 = document.createElement('div');
-			const result2 = document.createElement('div');
-			result1.classList.add('result-tagline');
-			result2.classList.add('result-paragraph');
-
 			const breed = this.dogs[id].breed;
 			const sign = this.dogs[id].sign;
 
-			result1.innerHTML = `You are ${this.addArticle(breed)}!<br> Woof woof 🐶 <br><br>
-			Why? Because you're ${this.addArticle(sign)}!<br>(${this.dogs[id].dates})<br><br>`
-			result2.innerHTML = `${this.texts[id]}`
-
-			this.$intro.parentNode.removeChild(this.$intro)
+			this.$introText.parentNode.removeChild(this.$introText)
 			this.$grid.parentNode.removeChild(this.$grid)
-
+			
 			this.$result.classList.add('visible');
 
-			this.$result.appendChild(result1);
-			this.$result.appendChild(result2);
+			this.$resultTagline.innerHTML = `You are ${this.addArticle(breed)}!<br> Woof woof 🐶 <br><br>
+			Why? Because you're ${this.addArticle(sign)}!<br>(${this.dogs[id].dates})<br><br>`
+			this.$resultParapgraph.innerHTML = `${this.texts[id]}`;
 		 }, 200)
 	}
 
-	// This function simply prepends the appropriate indefinite article to the noun:
-	// Either "a" or "an".
+	// This function prepends the correct indefinite article to the noun: "a" or "an".
 	addArticle(word) {
 		const vowels = ['a', 'e', 'i', 'o', 'u'];
 		const firstLetter = word.substr(0, 1).toLowerCase();
 		const startsWithVowel = vowels.includes(firstLetter, 0);
-		let a = "a";
-		startsWithVowel ? a+= "n" : a = a;
-		return `${a} ${word}`
+		let article = "a";
+		startsWithVowel ? article+= "n" : article = article;
+		return `${article} ${word}`
 	}
 }
 
