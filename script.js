@@ -11,6 +11,7 @@ class App {
 		this.$result = document.querySelector('.result');
 		this.$resultTagline = document.querySelector('.result-tagline');
 		this.$resultParapgraph = document.querySelector('.result-paragraph');
+		this.$image = document.querySelector('.result-image')
 
 		this.addEventListeners();
 	}
@@ -41,7 +42,7 @@ class App {
 	unhighlight() {
 		const button = event.target.closest('.button');
 		if(event.target.matches('.button')) {
-			button.classList.remove('highlight')
+			button.classList.remove('highlight');
 		}
 	}
 
@@ -64,16 +65,22 @@ class App {
 	populatePage(id) {
 		this.$result.style.margin = "4rem auto";
 		setTimeout( () => { 
-			this.$introText.parentNode.removeChild(this.$introText)
-			this.$grid.parentNode.removeChild(this.$grid)
+			this.$introText.parentNode.removeChild(this.$introText);
+			this.$grid.parentNode.removeChild(this.$grid);
 			this.$result.classList.add('visible');
 
 			const breed = this.dogs[id].breed;
 			const sign = this.dogs[id].sign;
-
-			this.$resultTagline.innerHTML = `You are ${this.addArticle(breed)}!<br> Woof woof 🐶 <br><br>
+			
+			// '<br> Woof woof 🐶'
+			this.$resultTagline.innerHTML = `You are ${this.addArticle(breed)}!<br>
 			Why? Because you're ${this.addArticle(sign)}!<br>(${this.dogs[id].dates})<br><br>`
 			this.$resultParapgraph.innerHTML = `${this.texts[id]}`;
+
+			console.log(this.$image)
+			console.log(this.dogs[id])
+			this.$image.style.backgroundImage = `url('./utils/dog${id}.jpg')`;
+
 		 }, 400)
 	}
 
@@ -81,10 +88,9 @@ class App {
 	addArticle(word) {
 		const vowels = ['a', 'e', 'i', 'o', 'u'];
 		const firstLetter = word.substr(0, 1).toLowerCase();
-		const startsWithVowel = vowels.includes(firstLetter, 0);
-		let article = "a";
-		startsWithVowel ? article+= "n" : article = article;
-		return `${article} ${word}`
+		const startsWithVowel = vowels.includes(firstLetter);
+		const article = startsWithVowel ? "an" : "a";
+		return `${article} ${word}`;
 	}
 }
 
