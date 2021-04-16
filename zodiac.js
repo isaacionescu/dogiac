@@ -16,11 +16,11 @@ export let dogs = {
 }
 
 
-// like those born under the Aries sign deserve a dog who’s just as intelligent, fearless, and full of energy as they are. German Shepherds are often used as police dogs thanks to their loyalty and bravery. This energetic, highly trainable breed is ideal for a fire sign like Aries.
+// Natural born leaders like those born under the Aries sign deserve a dog who’s just as intelligent, fearless, and full of energy as they are. German Shepherds are often used as police dogs thanks to their loyalty and bravery. This energetic, highly trainable breed is ideal for a fire sign like Aries.
 
 export let texts = {
 	1: `
-	Natural born leaders 
+	TEST v. 1.42 // max-height: 70vh
 	`,
 
 	2: `
