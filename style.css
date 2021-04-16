@@ -128,7 +128,7 @@ body {
 	background-color: rgba(150, 150, 150, 0.5);
 	margin: 2rem auto 0;
 	width: 85vw;
-	max-height: 70vh;
+	max-height: 80vh;
 	display: block;
 	padding: 1rem;
 	border-radius: 1.5rem;
@@ -169,7 +169,7 @@ body {
 
 	max-height: 10rem;
 	padding: 0;
-	font-size: 1.1rem;
+	font-size: 1rem;
 	font-weight: normal;
 	color: white;
 	overflow-y: auto;

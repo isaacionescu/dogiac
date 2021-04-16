@@ -20,7 +20,9 @@ export let dogs = {
 
 export let texts = {
 	1: `
-	TEST v. 1.42 // max-height: 70vh
+	TEST v. 1.43 // 
+	.result { max-height: 80vh };
+	.result-paragraph { font-size: 1rem };
 	`,
 
 	2: `
