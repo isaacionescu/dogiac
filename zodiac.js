@@ -6,7 +6,7 @@ export let dogs = {
 	 3: { sign: 'Gemini', breed: 'Pembroke Welsh corgi', dates: 'May 21 - Jun 20' },
 	 4: { sign: 'Cancer', breed: 'Pomeranian', dates: 'Jun 21 - Jul 22' },
 	 5: { sign: 'Leo', breed: 'Rottweiler', dates: 'Jul 23 - Aug 22' },
-	 6: { sign: 'Virgo', breed: 'Chow Choweed*', dates: 'Aug 23 - Sep 22' },
+	 6: { sign: 'Virgo', breed: 'Chow Chow', dates: 'Aug 23 - Sep 22' },
 	 7: { sign: 'Libra', breed: 'Greyhound', dates: 'Sep 23 - Oct 22' },
 	 8: { sign: 'Scorpio', breed: 'Norfolk terrier', dates: 'Oct 23 - Nov 21' },
 	 9: { sign: 'Sagittarius', breed: 'Australian shepherd', dates: 'Nov 22 - Dec 21' },
@@ -16,12 +16,19 @@ export let dogs = {
 }
 
 
+// like those born under the Aries sign deserve a dog who’s just as intelligent, fearless, and full of energy as they are. German Shepherds are often used as police dogs thanks to their loyalty and bravery. This energetic, highly trainable breed is ideal for a fire sign like Aries.
+
 export let texts = {
 	1: `
-	Natural born leaders like those born under the Aries sign deserve a dog who’s just as intelligent, fearless, and full of energy as they are. German Shepherds are often used as police dogs thanks to their loyalty and bravery. This energetic, highly trainable breed is ideal for a fire sign like Aries.
+	Natural born leaders 
 	`,
 
 	2: `
+	Any Taurus appreciates the beauty in life and will naturally gravitate toward the prettiest breeds. With his beautiful blonde coat and fetching doggy features, a golden retriever is an ideal pup to fit into a Taurus’ picture-perfect lifestyle. It doesn’t hurt that goldens are also loyal, dependable, and sociable — just like a Taurus.
+
+
+	Any Taurus appreciates the beauty in life and will naturally gravitate toward the prettiest breeds. With his beautiful blonde coat and fetching doggy features, a golden retriever is an ideal pup to fit into a Taurus’ picture-perfect lifestyle. It doesn’t hurt that goldens are also loyal, dependable, and sociable — just like a Taurus.
+
 	Any Taurus appreciates the beauty in life and will naturally gravitate toward the prettiest breeds. With his beautiful blonde coat and fetching doggy features, a golden retriever is an ideal pup to fit into a Taurus’ picture-perfect lifestyle. It doesn’t hurt that goldens are also loyal, dependable, and sociable — just like a Taurus.
 	`,
 

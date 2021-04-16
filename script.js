@@ -8,10 +8,10 @@ class App {
 		this.$button = document.querySelector('.button');
 		this.$introText = document.querySelector('.intro-text');
 		this.$grid =document.querySelector('.grid');
-		this.$result = document.querySelector('.result');
-		this.$resultTagline = document.querySelector('.result-tagline');
-		this.$resultParapgraph = document.querySelector('.result-paragraph');
-		this.$image = document.querySelector('.result-image')
+		// this.$result = document.querySelector('.result');
+		// this.$resultTagline = document.querySelector('.result-tagline');
+		// this.$resultParapgraph = document.querySelector('.result-paragraph');
+		// this.$resultImage = document.querySelector('.result-image')
 
 		this.addEventListeners();
 	}
@@ -47,7 +47,7 @@ class App {
 	}
 
 	// Retrieves the HTML element that was clicked, from hidePageContent(), and finds its corresponding ID. Then, it passes this ID further to populatePage()
-	generateResult() {
+	generateResult() {		
 		const signID = this.hidePageContent().dataset.id;
 		this.populatePage(signID)
 	}
@@ -63,23 +63,55 @@ class App {
 	}
 
 	populatePage(id) {
-		this.$result.style.margin = "4rem auto";
+		// this.$result.style.margin = "2rem auto";
+		// console.log(this.$result.style.display)
+
 		setTimeout( () => { 
-			this.$introText.parentNode.removeChild(this.$introText);
-			this.$grid.parentNode.removeChild(this.$grid);
-			this.$result.classList.add('visible');
+			const result = document.createElement('div');
+			const result1 = document.createElement('div');
+			const result2 = document.createElement('div');
+			const result3 = document.createElement('div');
+			
+			result.classList.add('result')
+			result.classList.add('invisible')
+			result1.classList.add('result-tagline');
+			result2.classList.add('result-image');
+			result3.classList.add('result-paragraph');
 
 			const breed = this.dogs[id].breed;
 			const sign = this.dogs[id].sign;
-			
-			// '<br> Woof woof 🐶'
-			this.$resultTagline.innerHTML = `You are ${this.addArticle(breed)}!<br>
-			Why? Because you're ${this.addArticle(sign)}!<br>(${this.dogs[id].dates})<br><br>`
-			this.$resultParapgraph.innerHTML = `${this.texts[id]}`;
 
-			console.log(this.$image)
-			console.log(this.dogs[id])
-			this.$image.style.backgroundImage = `url('./utils/dog${id}.jpg')`;
+			result1.innerHTML = `You are ${this.addArticle(breed)}!<br>
+			Why? Because you're ${this.addArticle(sign)}!<br>(${this.dogs[id].dates})`
+			result2.style.backgroundImage = `url('./utils/dog${id}.jpg')`;
+			result3.innerHTML = `${this.texts[id]}`;
+
+			this.$introText.parentNode.removeChild(this.$introText);
+			this.$grid.parentNode.removeChild(this.$grid);
+
+			result.classList.add('visible');
+
+			this.$body.appendChild(result) 
+			result.appendChild(result1);
+			result.appendChild(result2);
+			result.appendChild(result3);
+
+
+
+
+
+			// this.$introText.parentNode.removeChild(this.$introText);
+			// this.$grid.parentNode.removeChild(this.$grid);
+			// this.$result.classList.add('visible');
+
+			// const breed = this.dogs[id].breed;
+			// const sign = this.dogs[id].sign;
+			
+			// // '<br> Woof woof 🐶'
+			// this.$resultTagline.innerHTML = `You are ${this.addArticle(breed)}!<br>
+			// Why? Because you're ${this.addArticle(sign)}!<br>(${this.dogs[id].dates})`
+			// this.$resultImage.style.backgroundImage = `url('./utils/dog${id}.jpg')`;
+			// this.$resultParapgraph.innerHTML = `${this.texts[id]}`;
 
 		 }, 400)
 	}
