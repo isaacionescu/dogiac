@@ -20,17 +20,10 @@ export let dogs = {
 
 export let texts = {
 	1: `
-	TEST v. 1.44 // 
-	.result { max-height: 85vh }; 
-	.result-paragraph { font-size: 0.9rem };
+	Natural born leaders like those born under the Aries sign deserve a dog who’s just as intelligent, fearless, and full of energy as they are. German Shepherds are often used as police dogs thanks to their loyalty and bravery. This energetic, highly trainable breed is ideal for a fire sign like Aries.
 	`,
 
 	2: `
-	Any Taurus appreciates the beauty in life and will naturally gravitate toward the prettiest breeds. With his beautiful blonde coat and fetching doggy features, a golden retriever is an ideal pup to fit into a Taurus’ picture-perfect lifestyle. It doesn’t hurt that goldens are also loyal, dependable, and sociable — just like a Taurus.
-
-
-	Any Taurus appreciates the beauty in life and will naturally gravitate toward the prettiest breeds. With his beautiful blonde coat and fetching doggy features, a golden retriever is an ideal pup to fit into a Taurus’ picture-perfect lifestyle. It doesn’t hurt that goldens are also loyal, dependable, and sociable — just like a Taurus.
-
 	Any Taurus appreciates the beauty in life and will naturally gravitate toward the prettiest breeds. With his beautiful blonde coat and fetching doggy features, a golden retriever is an ideal pup to fit into a Taurus’ picture-perfect lifestyle. It doesn’t hurt that goldens are also loyal, dependable, and sociable — just like a Taurus.
 	`,
 

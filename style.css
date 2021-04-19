@@ -236,12 +236,16 @@ body {
 	}
 
 	.result {
-		max-width: 70vw;
+		width: 75vw;
 	}
 
 	.result-image {
 		width: 48vw;
 		height: 36vw; 
+	}
+
+	.result-paragraph { 
+		font-size: 1rem;
 	}
 }
 
@@ -268,12 +272,16 @@ body {
 	}
 
 	.result {
-		max-width: 60vw;
+		width: 65vw;
 	}
 
 	.result-image {
-		width: 36vw;
-		height: 27vw; 
+		width: 32vw;
+		height: 24vw; 
+	}
+
+	.result-paragraph { 
+		font-size: 1.15rem;
 	}
 }
 
@@ -312,12 +320,13 @@ body {
 	}
 
 	.result-image {
-		width: 20vw;
-		height: 15vw; 
+		width: 24vw;
+		height: 18vw; 
 	}
 
 	.result-paragraph {
 		max-height: 10rem;
+		font-size: 1.2rem;
 	}
 }
 

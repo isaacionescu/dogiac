@@ -98,8 +98,6 @@ class App {
 
 
 
-
-
 			// this.$introText.parentNode.removeChild(this.$introText);
 			// this.$grid.parentNode.removeChild(this.$grid);
 			// this.$result.classList.add('visible');
@@ -112,7 +110,6 @@ class App {
 			// Why? Because you're ${this.addArticle(sign)}!<br>(${this.dogs[id].dates})`
 			// this.$resultImage.style.backgroundImage = `url('./utils/dog${id}.jpg')`;
 			// this.$resultParapgraph.innerHTML = `${this.texts[id]}`;
-
 		 }, 400)
 	}
 
@@ -120,8 +117,7 @@ class App {
 	addArticle(word) {
 		const vowels = ['a', 'e', 'i', 'o', 'u'];
 		const firstLetter = word.substr(0, 1).toLowerCase();
-		const startsWithVowel = vowels.includes(firstLetter);
-		const article = startsWithVowel ? "an" : "a";
+		const article = vowels.includes(firstLetter) ? "an" : "a";
 		return `${article} ${word}`;
 	}
 }
